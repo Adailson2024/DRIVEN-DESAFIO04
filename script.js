@@ -6,7 +6,7 @@ let valorBebidaSelecionado = 0;
 let valorSobremesaSelectionada = 0;
 
 function selecionarPrato(p1) {
-  const p1Selecionadoantes = document.getElementById(
+  const p1Selecionadoantes = document.querySelector(
     ".opcoesdeprato .selecionador"
   );
   escolhaprato = p1.children[1].innerHTML;
@@ -19,7 +19,7 @@ function selecionarPrato(p1) {
 }
 
 function selecionadordeBebidas(b1) {
-  const b1Selecionadoantes = document.getElementById(
+  const b1Selecionadoantes = document.querySelector(
     ".opcoesdebebida .selecionador"
   );
   escolhabebida = b1.children[1].innerHTML;
@@ -32,7 +32,7 @@ function selecionadordeBebidas(b1) {
   b1.classList.add("selecionador");
 }
 function selecionarSobremesa(s1) {
-  const s1Selecionadoantes = document.getElementById(
+  const s1Selecionadoantes = document.querySelector(
     ".opcoesdesobremesa .selecionador"
   );
   escolhasobremesa = s1.children[1].innerHTML;
