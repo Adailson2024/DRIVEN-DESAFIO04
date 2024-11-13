@@ -4,6 +4,7 @@ let escolhasobremesa = "";
 let valorPratoSelecionado = 0;
 let valorBebidaSelecionado = 0;
 let valorSobremesaSelectionada = 0;
+let total=0;
 
 function selecionarPrato(p1) {
   const p1Selecionadoantes = document.querySelector(
@@ -39,7 +40,7 @@ function selecionarSobremesa(s1) {
   valorSobremesaSelectionada = parseFloat(s1.children[3].innerHTML);
   console.log(valorSobremesaSelectionada);
   
-  if (escolhaprato !== "" && escolhabebida !== "") {
+  
     if (s1Selecionadoantes !== null) {
       s1Selecionadoantes.classList.remove("selecionador");
     }
@@ -48,10 +49,7 @@ function selecionarSobremesa(s1) {
     document.querySelector(".botao1").classList.add("esconder");
 
     document.querySelector(".botao2").classList.remove("esconder");
-  } else {
-    
-    alert("Por favor, selecione um prato e uma bebida.");
-  }
+   
 }
 function fecharPedido() {
   const fim = document.querySelector(".final");
@@ -77,7 +75,7 @@ function fecharPedido() {
       currency: "BRL",
     });
   document.querySelector(".pedido3").innerHTML = texto3;
-  const total = (valorPratoSelecionado + valorBebidaSelecionado + valorSobremesaSelectionada);
+  total = (valorPratoSelecionado + valorBebidaSelecionado + valorSobremesaSelectionada);
   
   document.querySelector(".Total").innerHTML = "TOTAL: " + total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
 }
@@ -86,6 +84,19 @@ function cancelador() {
   const c = document.querySelector(".final");
   c.classList.add("esconder");
   
+}
+
+function tcerto() {
+  const numero = "+5588996967486";
+  const mensagem =
+    `Olá, gostaria de fazer o pedido:\n \- Prato: ${escolhaprato}\n \- Bebida: ${escolhabebida}\n \- Sobremesa: ${escolhasobremesa}\nTotal: ` +
+    total.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  const mensagemCodificada = encodeURIComponent(mensagem);
+  const link = `https://api.whatsapp.com/send?phone=${numero}&text=${mensagemCodificada}`;
+  window.open(link, "_blank");
 }
 
 

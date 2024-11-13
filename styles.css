@@ -1020,12 +1020,11 @@ body {
 
 .adicionar {
   width: 414px;
-  height: 1026px;
-  top: -455px;
-  left: 739px;
+  height: 1380px;
   gap: 0px;
   opacity: 0px;
   background: rgba(255, 255, 255, 0.9);
+  position: absolute;
   z-index: 1;
 }
 .conteudo {

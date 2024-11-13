@@ -101,9 +101,10 @@
         </div>
         <div class="bordaa">
           <a
-            href="https://wa.me/+5588996967486?text=Olá! Seu pedido número 12345 foi confirmado."
-            target="_blank"
-            class="tudocerto"
+          onclick="tcerto()"
+          href="https://api.whatsapp.com/send?phone=${numero}&text=${mensagemCodificada}"
+          target="_blank"
+          class="tudocerto"
             >Tudo certo, pode pedir!</a
           >
         </div>
