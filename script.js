@@ -85,6 +85,7 @@ function fecharPedido() {
 function cancelador() {
   const c = document.querySelector(".final");
   c.classList.add("esconder");
+  document.querySelector(".adicionar").classList.add("esconder");
   
 }
 
