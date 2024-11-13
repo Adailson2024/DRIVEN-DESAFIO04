@@ -54,6 +54,8 @@ function selecionarSobremesa(s1) {
 function fecharPedido() {
   const fim = document.querySelector(".final");
   fim.classList.remove("esconder");
+  const ad = document.querySelector(".adicionar");
+  ad.classList.remove("esconder");
   const texto =
     `${escolhaprato}: ` +
     valorPratoSelecionado.toLocaleString("pt-br", {
